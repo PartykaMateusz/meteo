@@ -1,6 +1,10 @@
 spring:
   application:
     name: openMeteo
+  datasource:
+    user: root
+    password: example
+    url: jdbc:postgresql://postgres:5432/meteo_history
 
 server:
   port: 8080
