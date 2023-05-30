@@ -16,3 +16,7 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: basic
+
+open-meteo:
+  name: open-meteo
+  url: https://archive-api.open-meteo.com/v1/
