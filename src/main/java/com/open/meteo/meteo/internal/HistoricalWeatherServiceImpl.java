@@ -1,9 +1,9 @@
 package com.open.meteo.meteo.internal;
 
-import com.open.meteo.feign.OpenMeteoFeign;
 import com.open.meteo.meteo.HistoricalWeatherService;
 import com.open.meteo.meteo.internal.dto.WeatherResponse;
 import com.open.meteo.meteo.internal.enity.DailyWeather;
+import com.open.meteo.meteo.internal.feign.OpenMeteoFeign;
 import com.open.meteo.meteo.internal.repository.DailyWeatherRepository;
 import com.open.meteo.meteo.internal.repository.WeatherDataRequestLogRepository;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class HistoricalWeatherServiceImpl implements HistoricalWeatherService {
 
     @Override
     public WeatherResponse getAndSaveLastWeekWeather(String latitude, String longitude) {
-        LocalDate from = LocalDate.now().minusDays(7);
+        LocalDate from = LocalDate.now().minusDays(6);
         LocalDate to = LocalDate.now();
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

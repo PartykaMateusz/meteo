@@ -2,17 +2,15 @@ package com.open.meteo.meteo.internal;
 
 import com.open.meteo.meteo.internal.dto.WeatherDataDto;
 import com.open.meteo.meteo.internal.enity.DailyWeather;
-import org.antlr.v4.runtime.tree.Tree;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DailyWeatherFactoryTest {
 

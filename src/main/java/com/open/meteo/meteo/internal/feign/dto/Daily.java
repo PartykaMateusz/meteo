@@ -1,4 +1,4 @@
-package com.open.meteo.feign;
+package com.open.meteo.meteo.internal.feign.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

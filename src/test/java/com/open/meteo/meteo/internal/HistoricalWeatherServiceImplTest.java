@@ -1,7 +1,7 @@
 package com.open.meteo.meteo.internal;
 
-import com.open.meteo.feign.OpenMeteoFeign;
-import com.open.meteo.feign.OpenMeteoResponse;
+import com.open.meteo.meteo.internal.feign.OpenMeteoFeign;
+import com.open.meteo.meteo.internal.feign.dto.OpenMeteoResponse;
 import com.open.meteo.meteo.HistoricalWeatherService;
 import com.open.meteo.meteo.internal.dto.WeatherDataDto;
 import com.open.meteo.meteo.internal.dto.WeatherResponse;

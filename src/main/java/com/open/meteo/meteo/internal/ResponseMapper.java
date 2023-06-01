@@ -1,7 +1,7 @@
 package com.open.meteo.meteo.internal;
 
-import com.open.meteo.feign.Daily;
-import com.open.meteo.feign.OpenMeteoResponse;
+import com.open.meteo.meteo.internal.feign.dto.Daily;
+import com.open.meteo.meteo.internal.feign.dto.OpenMeteoResponse;
 import com.open.meteo.meteo.internal.dto.WeatherDataDto;
 import com.open.meteo.meteo.internal.dto.WeatherResponse;
 import lombok.NonNull;
