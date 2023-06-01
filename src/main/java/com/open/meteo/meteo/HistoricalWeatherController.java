@@ -20,6 +20,6 @@ public class HistoricalWeatherController {
     @GetMapping("/lastWeek")
     public ResponseEntity<WeatherResponse> getHistoricalWeather(@RequestParam String latitude,
                                                                 @RequestParam String longitude){
-        return ResponseEntity.ok(historicatWeatherService.getLastWeekWeather(latitude, longitude));
+        return ResponseEntity.ok(historicatWeatherService.getAndSaveLastWeekWeather(latitude, longitude));
     }
 }

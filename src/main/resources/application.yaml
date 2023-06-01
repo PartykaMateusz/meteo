@@ -5,7 +5,9 @@ spring:
     user: root
     password: example
     url: jdbc:postgresql://postgres:5432/meteo_history
-
+  jpa:
+    hibernate:
+      ddl-auto: create
 server:
   port: 8080
 

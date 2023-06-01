@@ -4,5 +4,5 @@ import com.open.meteo.meteo.internal.dto.WeatherResponse;
 
 public interface HistoricalWeatherService {
 
-    WeatherResponse getLastWeekWeather(String latitude, String longitude);
+    WeatherResponse getAndSaveLastWeekWeather(String latitude, String longitude);
 }

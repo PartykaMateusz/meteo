@@ -5,6 +5,8 @@ import com.open.meteo.feign.OpenMeteoResponse;
 import com.open.meteo.meteo.HistoricalWeatherService;
 import com.open.meteo.meteo.internal.dto.WeatherDataDto;
 import com.open.meteo.meteo.internal.dto.WeatherResponse;
+import com.open.meteo.meteo.internal.repository.DailyWeatherRepository;
+import com.open.meteo.meteo.internal.repository.WeatherDataRequestLogRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -28,10 +30,18 @@ class HistoricalWeatherServiceImplTest {
     @Mock
     private ResponseMapper responseMapper;
 
+    @Mock
+    private WeatherDataRequestLogRepository weatherDataRequestLogRepository;
+
+    @Mock
+    private DailyWeatherRepository dailyWeatherRepository;
+
+
     @BeforeEach
     void setup() {
         MockitoAnnotations.openMocks(this);
-        historicalWeatherService = new HistoricalWeatherServiceImpl(openMeteoFeign, responseMapper);
+        historicalWeatherService
+                = new HistoricalWeatherServiceImpl(openMeteoFeign, responseMapper, weatherDataRequestLogRepository, dailyWeatherRepository);
     }
 
     @Test
@@ -59,7 +69,7 @@ class HistoricalWeatherServiceImplTest {
         expectedWeatherResponse.setWeather(expectedWeatherMap);
         when(responseMapper.map(mockOpenMeteoResponse)).thenReturn(expectedWeatherResponse);
 
-        WeatherResponse weatherResponse = historicalWeatherService.getLastWeekWeather(latitude, longitude);
+        WeatherResponse weatherResponse = historicalWeatherService.getAndSaveLastWeekWeather(latitude, longitude);
 
         assertEquals(latitude, weatherResponse.getLatitude());
         assertEquals(longitude, weatherResponse.getLongitude());
