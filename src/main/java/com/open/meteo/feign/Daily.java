@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Data
@@ -15,8 +15,8 @@ public class Daily {
     @JsonProperty("precipitation_sum")
     private List<Double> precipitationSum;
 
-    final List<LocalDateTime> sunrise;
+    final List<LocalTime> sunrise;
 
-    final List<LocalDateTime> sunset;
+    final List<LocalTime> sunset;
 
 }

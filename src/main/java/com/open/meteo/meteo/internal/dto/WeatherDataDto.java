@@ -2,14 +2,14 @@ package com.open.meteo.meteo.internal.dto;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Data
 public class WeatherDataDto {
 
-    private Double meanPrecipitation ;
+    private Double averagePrecipitation;
 
-    private LocalDateTime sunrise;
+    private LocalTime sunrise;
 
-    private LocalDateTime sunset;
+    private LocalTime sunset;
 }
