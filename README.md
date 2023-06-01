@@ -23,3 +23,7 @@ To build the Docker image, run the following command:
 To start the application using Docker Compose, run the following command:
 
 `docker-compose up`
+
+## The endpoint to fetching historical weather data:
+
+`localhost:8080/api/v1/historical-weather/lastWeek?latitude=41.89&longitude=12.51`
